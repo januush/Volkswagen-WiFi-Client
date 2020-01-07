@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CFCU Wi-Fi Client</string>
+    <string name="tab_text_1">Monitoring Data</string>
+    <string name="tab_text_2">Car Functions</string>
+    <string name="new_sub_window_title">Start New Subscription</string>
+    <string name="new_sub_window_hint">Vehicle parameters</string>
+    <string name="new_sub_window_interval">time step [ms]</string>
+    <string name="new_sub_window_start">Start</string>
+</resources>
