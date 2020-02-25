@@ -1,11 +1,8 @@
 package com.example.kfgclient;
-import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.support.annotation.MainThread;
 import android.util.Log;
 import android.widget.Toast;
 
