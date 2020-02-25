@@ -32,7 +32,7 @@ import java.util.Map;
  */
 
 /**
- * TODO Wszystko co inicjuje widok zostawić tutaj. Cała reszta ma iść do ViewModel!
+ *
  * czyli z Main trzeba powiadamiać ViewModel, a nie bezpośrednio Fragment?
  */
 
@@ -236,10 +236,7 @@ public class MonitoringFragment extends Fragment {
                     ((ViewGroup) objectsContainerLayout).removeView(objectBox);
                 }
             });
-            //TODO tutaj daje zły new_object_url!!
-            //TODO gdy przychodzi Odometer to się ustawia, ale przy następnym komunikacie od Engine SPeed, Odometer też się zmienia
-            //TODO Play/Stop Button
-            //TODO usypianie ekranu
+
 
             Log.d(Const.MYTAG,"Added new View to the containter with url: " + tagNameForBox);
         }

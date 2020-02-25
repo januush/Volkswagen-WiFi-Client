@@ -14,7 +14,7 @@ import de.exlap.DataListener;
 import de.exlap.DataObject;
 import de.vwn.kfg.client.KFGClient;
 import de.vwn.kfg.client.KFGListenerAdapter;
-//TODO synchoronized...?
+
 /**
  * Manager class which handles connection establishment to KFG. This manager provides WLAN connection to KFG server.
  * This is the point where the KFG library informs the app about connection status (e.g. connection loss or connection

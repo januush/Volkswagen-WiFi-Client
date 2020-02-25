@@ -17,7 +17,6 @@ import com.example.kfgclient.R;
  * A placeholder fragment containing a simple view.
  */
 public class ControlFragment extends Fragment {
-    //TODO tutaj muszę mieć ExlapListAdapder, listę
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
