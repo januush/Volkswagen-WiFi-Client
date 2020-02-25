@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.kfgclient"
-        minSdkVersion 24
+        minSdkVersion 26
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -29,6 +29,7 @@ dependencies {
     implementation files('libs/jexlap-core-1.9.1.jar')
     implementation files('libs/kfg-client-1.5.0.jar')
 
+    implementation 'org.apache.commons:commons-lang3:3.9'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

@@ -125,6 +125,7 @@ public class MonitoringFragment extends Fragment {
         timeStepSB = popUpView.findViewById(R.id.new_sub_window_interval);
         dropListBtn =  popUpView.findViewById(R.id.new_sub_window_arrow);
         timeStepTV = popUpView.findViewById(R.id.new_sub_window_time_step);
+        timeStepTV.setText((R.string.def_sub_time));
         subscribeBtn =  popUpView.findViewById(R.id.new_sub_window_sub_start);
         dialogBuilder.setView(popUpView);
         dialog = dialogBuilder.create();
@@ -220,7 +221,7 @@ public class MonitoringFragment extends Fragment {
 
 
             url_tv.setText(tagNameForBox);
-            current_value.setText(value);
+            //current_value.setText(value);
 
 
             // dragging
@@ -235,11 +236,17 @@ public class MonitoringFragment extends Fragment {
                     ((ViewGroup) objectsContainerLayout).removeView(objectBox);
                 }
             });
+            //TODO tutaj daje zły new_object_url!!
+            //TODO gdy przychodzi Odometer to się ustawia, ale przy następnym komunikacie od Engine SPeed, Odometer też się zmienia
+            //TODO Play/Stop Button
+            //TODO usypianie ekranu
 
-            Log.d(Const.MYTAG,"Added new View to the containter with url: " + new_object_url);
+            Log.d(Const.MYTAG,"Added new View to the containter with url: " + tagNameForBox);
         }
 
         else{
+            View current_box = new_box;
+            current_value = current_box.findViewById(R.id.objectViewUrlValue);
             current_value.setText(value);
             Log.d(Const.MYTAG, "Updated View " + tagNameForBox + " with value: " + value);
 

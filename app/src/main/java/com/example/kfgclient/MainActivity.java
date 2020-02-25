@@ -11,7 +11,6 @@ import android.view.View;
 import com.example.kfgclient.ui.main.MonitoringViewModel;
 import com.example.kfgclient.ui.main.SectionsPagerAdapter;
 import de.exlap.DataObject;
-import de.vwn.kfg.client.KFGClient;
 
 /**
  * https://medium.com/androiddevelopers/viewmodels-a-simple-example-ed5ac416317e
@@ -22,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private int i = 100;
     private MonitoringViewModel monitoringViewModel;
     StringBuilder sb = new StringBuilder();
+    ConnectionManager connectionManagerRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ConnectionManager.init(this);
+
 
         monitoringViewModel =
                 ViewModelProviders.of(this).get(MonitoringViewModel.class);
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
-        FloatingActionButton connectBtn = findViewById(R.id.fab);
+        FloatingActionButton connectBtn = findViewById(R.id.testBtn);
 
 
 
@@ -46,17 +47,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                connectionManagerRef = ConnectionManager.getInstance();
 
-//                if(connectionManagerRef!=null) {
-//                    new Thread(connectionManagerRef).start();
-//                }
-//                else{
-//                    Log.e(Const.MYTAG,"ConnectionManager is null");
-//                }
+                if(connectionManagerRef!=null) {
+                    new Thread(connectionManagerRef).start();
+                }
+                else{
+                    Log.e(Const.MYTAG,"ConnectionManager is null");
+                }
 
-                monitoringViewModel.createOrUpdateObject(sb.toString(),String.valueOf(i*2));
-                i++;
-                sb.append('A');
+//                monitoringViewModel.createOrUpdateObject(sb.toString(),String.valueOf(i*2));
+//                i++;
+//                sb.append('A');
 
             }
         });

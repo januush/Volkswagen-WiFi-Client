@@ -6,4 +6,5 @@
     <string name="new_sub_window_hint">Vehicle parameters</string>
     <string name="new_sub_window_interval">time step [ms]</string>
     <string name="new_sub_window_start">Start</string>
+    <string name = "def_sub_time">1000</string>
 </resources>

@@ -37,7 +37,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginBottom="18dp"
-        android:text="Add"
+        android:text="Subscribe"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

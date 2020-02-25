@@ -1,15 +1,15 @@
 package com.example.kfgclient.ui.main;
 
 
+import android.app.Activity;
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.annotation.Nullable;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
+import android.widget.Button;
 
 import com.example.kfgclient.R;
 
@@ -21,18 +21,17 @@ public class ControlFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
-    private MonitoringViewModel pageViewModel;
+    private MonitoringViewModel controlViewModel;
+    private Button testButton;
+    private Activity activity;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        pageViewModel = ViewModelProviders.of(this).get(MonitoringViewModel.class);
-//        String index = 1;
-//        if (getArguments() != null) {
-//            index = getArguments().getInt(ARG_SECTION_NUMBER);
-//        }
-//        pageViewModel.setIndex(index);
+        controlViewModel = ViewModelProviders.of(this).get(MonitoringViewModel.class);
+        activity = this.getActivity();
+
     }
 
     @Override
@@ -40,15 +39,15 @@ public class ControlFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_control, container, false);
+        testButton = (Button) root.findViewById(R.id.testBtn);
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        // final TextView textView = root.findViewById(R.id.section_label);
+                controlViewModel.callFunction("vWN_Function_Call_Value_01",1,true);
+            }
+        });
 
-//        pageViewModel.getText().observe(this, new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                //   textView.setText(s);
-//            }
-//        });
 
         return root;
     }

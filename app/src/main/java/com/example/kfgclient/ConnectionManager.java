@@ -233,16 +233,14 @@ public class ConnectionManager implements Runnable, ConnectionListener, DataList
     }
 
     @Override
-    public void onData(DataObject dataObject) {
+    public void onData(final DataObject dataObject) {
 
-        final DataObject viewDataObject = dataObject;
-        final int req_id = dataObject.getResponseId();
 
         activity.runOnUiThread(new Runnable() {
 
             public void run() {
                 Log.d(Const.MYTAG, "ConnectionManager.onData(...) called");
-                activity.updateObjectsView(viewDataObject);
+                activity.updateObjectsView(dataObject);
 
             }
         });
