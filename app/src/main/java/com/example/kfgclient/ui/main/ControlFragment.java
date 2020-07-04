@@ -13,41 +13,31 @@ import android.widget.Button;
 
 import com.example.kfgclient.R;
 
-/**
- * A placeholder fragment containing a simple view.
- */
 public class ControlFragment extends Fragment {
+	private static final String ARG_SECTION_NUMBER = "section_number";
+	private MonitoringViewModel controlViewModel;
+	private Button testButton;
+	private Activity activity;
 
-    private static final String ARG_SECTION_NUMBER = "section_number";
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		controlViewModel = ViewModelProviders.of(this).get(MonitoringViewModel.class);
+		activity = this.getActivity();
+	}
 
-    private MonitoringViewModel controlViewModel;
-    private Button testButton;
-    private Activity activity;
-
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        controlViewModel = ViewModelProviders.of(this).get(MonitoringViewModel.class);
-        activity = this.getActivity();
-
-    }
-
-    @Override
-    public View onCreateView(
-            @NonNull LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_control, container, false);
-        testButton = (Button) root.findViewById(R.id.testBtn);
-        testButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                controlViewModel.callFunction("vWN_Function_Call_Value_01",1,true);
-            }
-        });
-
-
-        return root;
-    }
+	@Override
+	public View onCreateView(
+			@NonNull LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View root = inflater.inflate(R.layout.fragment_control, container, false);
+		testButton = (Button) root.findViewById(R.id.testBtn);
+		testButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				controlViewModel.callFunction("vWN_Function_Call_Value_01",1,true);
+			}
+		});
+		return root;
+	}
 }

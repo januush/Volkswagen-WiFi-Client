@@ -7,7 +7,6 @@ import android.content.res.Resources;
  * https://stackoverflow.com/questions/3166501/getting-the-screen-density-programmatically-in-android
  */
 public class AndroidViewHelper {
-
     /**
      * Calculates DP to PX.
      *
